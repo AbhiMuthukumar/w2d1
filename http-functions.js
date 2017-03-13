@@ -2,7 +2,7 @@ var https = require("https");
 
 var responseBuffer = '';
 
-function getHTML (options, callback) {
+module.exports = function getHTML (options, callback) {
 
     https.get(options, function(response){
     response.setEncoding("utf8");
@@ -18,16 +18,4 @@ function getHTML (options, callback) {
   }).on('error', function(err){
     console.log("Error: " , err);
   });
-
-}
-
-function printHTML (html) {
-  console.log(html);
-}
-
-var requestOptions = {
-  host: 'sytantris.github.io',
-  path: '/http-examples/step4.html'
 };
-
-getHTML(requestOptions, printHTML);
