@@ -1,3 +1,7 @@
+var https = require("https");
+
+  var responseBuffer = '';
+
 var getHTML = require('./http-functions');
 
 function printHTML (html) {
